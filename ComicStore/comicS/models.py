@@ -27,7 +27,7 @@ class Product(models.Model):
     thumbnail = models.ImageField(upload_to ='uploads/',blank = True, null = True)
     data_added = models.DateTimeField(auto_now_add = True)
     class Meta:
-            ordering = ('name',)
+            ordering = ('-data_added',)
     def __str__(self):
         return self.name
 
@@ -36,17 +36,17 @@ class Product(models.Model):
 
     def get_image(self):
         if self.image:
-            return 'htpp://127.0.0.1:8080' + self.image.url
+            return 'http://127.0.0.1:8000' + self.image.url
         return ''
     def get_thumbnail(self):
         if self.thumbnail:
-            return 'htpp://127.0.0.1:8080' + self.thumbnail.url
+            return 'http://127.0.0.1:8000' + self.thumbnail.url
         else:
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
                 self.save()
 
-                return 'htpp://127.0.0.1:8080' + self.thumbnail.url
+                return 'http://127.0.0.1:8000' + self.thumbnail.url
             else:
                 return ''
     def make_thumbnail(self,image,size =(300,200)):

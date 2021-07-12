@@ -31,21 +31,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
     'djoser',
     'comicS'
 ]
-CORS_ALLOWED_ORIGINS =[
-    "http://localhost:8080",
-]
+CORS_ORIGIN_WHITELIST = ('https://localhost:8080','https://127.0.1:8080', ) 
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOWED_ORIGINS =[
+#     "http://localhost:8080/",
+#     "http://127.0.0.1:8080/"
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR /'media/'
 
 
 # Default primary key field type

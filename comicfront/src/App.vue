@@ -15,7 +15,7 @@
           <i class="fa fa-search" aria-hidden="true"></i>
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         </b-nav-form>
-                  <p id="car-total">0</p>
+                  <p id="car-total">{{carTotalLength}}</p>
 
         <b-nav-form>
           <button class="boton">Iniciar sesión</button>
@@ -23,10 +23,36 @@
 
               </b-navbar-nav>
           </b-collapse>
+  <router-view></router-view>
 
   </b-navbar>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      car:{
+        items:[]
+      }
+    }
+  },
+  beforeCreate() {
+    this.$store.commit('initializeStore')
+  },
+  mounted() {
+    this.car = this.$store.state.car
+  },
+  computed:{
+    carTotalLength(){
+      let totalLength = 0
+      for (let i = 0; i < this.car.items.length; i++) {
+        totalLength += this.car.items[i].quantity        
+      }
+      return totalLength
+    }
+  }
+}
+</script>
 <style >
 .navbar-brand {
   margin-right: 0!important;
