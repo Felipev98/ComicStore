@@ -30,6 +30,9 @@ export default new Vuex.Store({
       }
       localStorage.setItem('car',JSON.stringify(state.car))
 
+    },
+    setIsLoading(state,status){
+      state.isLoading = status
     }
   },
   actions: {

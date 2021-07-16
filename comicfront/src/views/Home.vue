@@ -1,24 +1,20 @@
 <template>
 <div>
- <p>Hola</p>
-  <div v-for="product in latestProducts" :key="product.id">
-    <h2>{{product.name}}</h2>
-    <p>{{product.price}}</p>
-    <p>{{product.description}}</p>
-    <router-link :to="product.get_absolute_url">Ver más</router-link>
-    <!-- <img :src="product.get_thumbnail" alt=""> -->
-  </div>
+<Product v-for="product in latestProducts" :key="product.id" :product="product"/>
 </div>
-
 </template>
 
 <script>
 import axios from 'axios'
+import Product from '../components/Product.vue'
 export default {
    data() {
     return {
       latestProducts:[]
     }
+   },
+   components:{
+     Product
    },
    mounted() {
     this.getLatestProducts()

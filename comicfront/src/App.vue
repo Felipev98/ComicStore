@@ -19,8 +19,12 @@
 
         <b-nav-form>
           <button class="boton">Iniciar sesión</button>
+          <router-link to="/misterio" >Misterio</router-link>
+           <router-link to="/terror" >Terror</router-link>
         </b-nav-form>
-
+          <form method="get" action="/search" >
+          <input type="text" placeholder="k kiere bucal?" name="query">
+          </form>
               </b-navbar-nav>
           </b-collapse>
   <router-view></router-view>
