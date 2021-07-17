@@ -5,6 +5,10 @@ import Product from '../views/Product.vue'
 import Category from '../views/Category.vue'
 import Search from '../views/Search.vue'
 import Car from '../views/Car.vue'
+import SignUp from '../views/SignUp.vue'
+import LogIn from '../views/LogIn.vue'
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,7 +45,16 @@ const routes = [
     name:'Car',
     component:Car
   },
-
+  {
+    path:'/sign-up',
+    name:'SignUp',
+    component:SignUp
+  },
+  {
+    path:'/log-in',
+    name:'LogIn',
+    component:LogIn
+  },
 
 ]
 

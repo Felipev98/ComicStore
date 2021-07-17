@@ -19,6 +19,14 @@ export default new Vuex.Store({
       }else{
         localStorage.setItem('car',JSON.stringify(state.car))
       }
+      if(localStorage.getItem('token')){
+        state.token = localStorage.getItem('token')
+        state.IsAuthenticated = true
+      }else{
+        state.token = ''
+        state.IsAuthenticated = false
+      }
+
     },
     addToCar(state,item){
       const exists = state.car.items.filter(i => i.product.id === i.product.id)
@@ -33,7 +41,15 @@ export default new Vuex.Store({
     },
     setIsLoading(state,status){
       state.isLoading = status
-    }
+    },
+    setToken(state, token) {
+      state.token = token
+      state.isAuthenticated = true
+  },  
+  removeToken(state) {
+      state.token = ''
+      state.isAuthenticated = false
+  },
   },
   actions: {
   },
