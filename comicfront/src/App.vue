@@ -1,4 +1,6 @@
 <template>
+<div class="navbar-section">
+
   <b-navbar toggleable="lg" type="dark"  class="navbar">
     <b-navbar-brand href="#" class="ml-50">Comic <span>Store</span></b-navbar-brand>
 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -16,24 +18,32 @@
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         </b-nav-form>
                   <p id="car-total">{{carTotalLength}}</p>
-
         <b-nav-form>
-          <button class="boton">Iniciar sesión</button>
-          <router-link to="/misterio" >Misterio</router-link>
-           <router-link to="/terror" >Terror</router-link>
+          <template v-if="$store.state.isAuthenticated">
+            <router-link to="/my-account" class="btn btn-success">Mi perfil</router-link>
+          </template>
+            <template v-else>
+            <router-link to="/log-in" class="btn btn-success">Iniciar sesión</router-link>
+          </template>
+
         </b-nav-form>
           <form method="get" action="/search" >
           <input type="text" placeholder="k kiere bucal?" name="query">
           </form>
               </b-navbar-nav>
           </b-collapse>
-  <router-view></router-view>
+  <router-view>
+  </router-view>
 
   </b-navbar>
+  </div>
+
 </template>
 <script>
 import axios from 'axios'
+import Product from './components/Product.vue'
 export default {
+  components: { Product },
   data() {
     return {
       car:{
@@ -65,6 +75,7 @@ export default {
 }
 </script>
 <style >
+
 .navbar-brand {
   margin-right: 0!important;
   margin-left: 0.5rem !important;

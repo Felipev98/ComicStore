@@ -1,5 +1,6 @@
-<template>
-    <div>
+  <template>
+
+  <div>
         <div v-if="carTotalLength">
         <CarItem v-for="item in car.items" :key="item.product.id" :initialItem="item" v-on:removeFromCar="removeFromCar" />
         
@@ -53,5 +54,4 @@ export default {
 </script>
 
 <style>
-
 </style>

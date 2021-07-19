@@ -1,14 +1,13 @@
 <template>
 <div>
   <div class="section">
-    <div class="prueba">
   <div class="container">
     <div class="row">
       <div class="col-12">
     <Product v-for="product in latestProducts" :key="product.id" :product="product"/>
       </div>
     </div>
-</div>
+
   </div>
   </div>
 </div>
@@ -44,8 +43,5 @@ export default {
 }
 </script>
 <style>
-.section{
-  margin-top: 20rem;
-}
 
 </style>

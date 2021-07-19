@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store'
+
 import Home from '../views/Home.vue'
+
 import Product from '../views/Product.vue'
 import Category from '../views/Category.vue'
 import Search from '../views/Search.vue'
 import Car from '../views/Car.vue'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
-
-
+import MyAccount from '../views/MyAccount.vue'
+import Checkout from '../views/Checkout.vue'
 Vue.use(VueRouter)
-
 const routes = [
   {
     path: '/',
@@ -26,42 +28,65 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path:'/:category_slug/:product_slug',
-    name:'Product',
-    component:Product
-  },
-  // {
-  //   path:'/:category_slug',
-  //   name:'Category',
-  //   component:Category
-  // },
-  {
-    path:'/search',
-    name:'Search',
-    component:Search
+    path: '/sign-up',
+    name: 'SignUp',
+    component: SignUp
   },
   {
-    path:'/car',
-    name:'Car',
-    component:Car
+    path: '/log-in',
+    name: 'LogIn',
+    component: LogIn
   },
   {
-    path:'/sign-up',
-    name:'SignUp',
-    component:SignUp
+    path: '/my-account',
+    name: 'MyAccount',
+    component: MyAccount,
+    meta: {
+        requireLogin: true
+    }
   },
   {
-    path:'/log-in',
-    name:'LogIn',
-    component:LogIn
+    path: '/search',
+    name: 'Search',
+    component: Search
+  },
+  {
+    path: '/car',
+    name: 'Car',
+    component: Car
   },
 
+  {
+    path: '/cart/checkout',
+    name: 'Checkout',
+    component: Checkout,
+    meta: {
+        requireLogin: true
+    }
+  },
+  {
+    path: '/:category_slug/:product_slug',
+    name: 'Product',
+    component: Product
+  },
+  {
+    path: '/:category_slug',
+    name: 'Category',
+    component: Category
+  }
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
+    next({ name: 'LogIn', query: { to: to.path } });
+  } else {
+    next()
+  }
+})
+
 
 export default router

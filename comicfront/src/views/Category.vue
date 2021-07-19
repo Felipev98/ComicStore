@@ -11,42 +11,42 @@ import axios from 'axios'
 import Product from '../components/Product.vue'
 export default {
     name: 'Category',
+    components: {
+        Product
+    },
     data() {
         return {
-            category:{
-                products:[]
-            },
-           
+            category: {
+                products: []
+            }
         }
     },
-     components:{
-            Product
-            },
     mounted() {
         this.getCategory()
     },
-     watch:{
-         $route(to,from){
-             if(to.name === 'Category'){
-                 this.getCategory()
-             }
-         }
-     },
+    watch: {
+        $route(to, from) {
+            if (to.name === 'Category') {
+                this.getCategory()
+            }
+        }
+    },
     methods: {
-        async getCategory(){
+        async getCategory() {
             const categorySlug = this.$route.params.category_slug
+            this.$store.commit('setIsLoading', true)
             axios
                 .get(`/api/v1/products/${categorySlug}/`)
-                .then(response =>{
+                .then(response => {
                     this.category = response.data
-                    document.title = this.category.name + ' | ComicStore'
-                    console.log(response)
+                    document.title = this.category.name + ' | Djackets'
                 })
-                .catch(error =>{
+                .catch(error => {
                     console.log(error)
                 })
+            this.$store.commit('setIsLoading', false)
         }
-    },  
+    }
 }
 </script>
 

@@ -6,45 +6,44 @@
 </template>
 
 <script>
-import Product from '../components/Product.vue'
 import axios from 'axios'
+import Product from '../components/Product.vue'
 export default {
-name:'Search',
-components:{
-    Product
-},
-data() {
-    return {
-        products:[],
-        query: ''
+    name: 'Search',
+    components: {
+        Product
+    },
+    data() {
+        return {
+            products: [],
+            query: ''
+        }
+    },
+    mounted() {
+        document.title = 'Search | Djackets'
+        let uri = window.location.search.substring(1)
+        let params = new URLSearchParams(uri)
+        if (params.get('query')) {
+            this.query = params.get('query')
+            this.performSearch()
+        }
+    },
+    methods: {
+        async performSearch() {
+            this.$store.commit('setIsLoading', true)
+            await axios
+                .post('/api/v1/products/search/', {'query': this.query})
+                .then(response => {
+                    this.products = response.data
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+            this.$store.commit('setIsLoading', false)
+        }
     }
-},
-mounted() {
-    document.title = 'Buscar | ComicStore' 
-    let url = window.location.search.substring(1)
-    let params = new URLSearchParams(url)
-    
-    if (params.get('query')){
-        this.query = params.get('query')
-        this.performSearch()
-    }
-},
-methods: {
-    async performSearch(){
-        await axios
-            .post('/api/v1/products/search/',{'query':this.query})
-            .then(response =>{
-                this.products = response.data
-                console.log(response)
-            })
-            .catch(error =>{
-                console.log(error)
-            })
-    }
-},
 }
 </script>
-
 <style>
 
 </style>
