@@ -32,10 +32,11 @@
           </form>
               </b-navbar-nav>
           </b-collapse>
-  <router-view>
-  </router-view>
+
 
   </b-navbar>
+    <router-view>
+  </router-view>
   </div>
 
 </template>
@@ -75,7 +76,10 @@ export default {
 }
 </script>
 <style >
-
+body{
+  background-color: #1D3541 !important ;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,600&display=swap');
 .navbar-brand {
   margin-right: 0!important;
   margin-left: 0.5rem !important;

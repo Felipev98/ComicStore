@@ -1,13 +1,15 @@
 <template>
 <div>
   <div class="section">
-    <div class="prueba">
   <div class="container">
     <div class="row">
+      <div class="comics-titulo text-center mt-3">
+      <h2>Últimos comics</h2>
+
+      </div>
       <div class="col-12">
     <Product v-for="product in latestProducts" :key="product.id" :product="product"/>
       </div>
-    </div>
 </div>
   </div>
   </div>
@@ -45,7 +47,14 @@ export default {
 </script>
 <style>
 .section{
-  margin-top: 20rem;
+  width: 100%;
 }
-
+.comics-titulo{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.comics-titulo h2{
+  font-weight: 600;
+  font-size: 2rem;
+}
 </style>
