@@ -10,10 +10,14 @@ from .serializers import ProductSerializer,CategorySerializer
 
 class LatestProductList(APIView):
     def get(self, request, format=None):
-        products = Product.objects.all()[0:4]
+        products = Product.objects.all()[0:3]
         serializer = ProductSerializer(products,many= True)
         return Response(serializer.data)
-
+class   ProductList(APIView):
+    def get(self, request, format=None):
+        products = Product.objects.all()[3:6]
+        serializer = ProductSerializer(products,many= True)
+        return Response(serializer.data)
 class ProductDetail(APIView):
     def get_object(self,category_slug,product_slug):
         try:

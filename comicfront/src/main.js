@@ -5,10 +5,17 @@ import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import * as Vue2Leaflet from 'vue2-leaflet'; // VALID
+import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+
+Vue.component('l-map', LMap);
+Vue.component('l-tile-layer', LTileLayer);
+Vue.component('l-marker', LMarker);
 import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8000/'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(Vue2Leaflet )
 Vue.use( axios)
 Vue.config.productionTip = false
 

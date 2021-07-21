@@ -14,7 +14,7 @@
 
         <b-navbar-nav class="mr">
           <b-nav-form class="iconos">
-          <i class="fa fa-search" aria-hidden="true"></i>
+          <i v-b-modal.modal-1 class="fa fa-search" aria-hidden="true"></i>
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         </b-nav-form>
                   <p id="car-total">{{carTotalLength}}</p>
@@ -23,13 +23,17 @@
             <router-link to="/my-account" class="btn btn-success">Mi perfil</router-link>
           </template>
             <template v-else>
-            <router-link to="/log-in" class="btn btn-success">Iniciar sesión</router-link>
+            <router-link to="/log-in" class="btn-login">Iniciar sesión</router-link>
           </template>
-
-        </b-nav-form>
-          <form method="get" action="/search" >
+<div>
+  <b-modal id="modal-1" title="Buscar Comics">
+     <form method="get" action="/search" >
           <input type="text" placeholder="k kiere bucal?" name="query">
           </form>
+  </b-modal>
+</div>
+        </b-nav-form>
+         
               </b-navbar-nav>
           </b-collapse>
 
@@ -83,12 +87,19 @@ body{
 .navbar-brand {
   margin-right: 0!important;
   margin-left: 0.5rem !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 .nav-link{
   color: white !important;
 }
+.nav-link:hover{
+  color: #00293D !important;
+}
 .prueba{
-  transform: translateX(22px);
+  transform: translateX(52px);
+      font-family: 'Poppins', sans-serif;
+
 }
 .boton{
   padding: 0.5rem;
@@ -129,4 +140,13 @@ li.form-inline.iconos{
 	font-size: 14px;
   transform: translateX(-56px);
 }
+.btn-login{
+  padding: 1rem;
+  	color:#455A64;
+    background: #FFC107;
+    margin-right: 1rem;
+    border-radius: 1.4rem;
+    text-decoration: none;
+}
+
 </style>

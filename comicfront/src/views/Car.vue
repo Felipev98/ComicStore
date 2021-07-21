@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import CarItem from '../components/CarItem.vue'
 export default {
     name:"Car",
