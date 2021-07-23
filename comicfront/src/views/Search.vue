@@ -1,7 +1,14 @@
 <template>
   <div>
+      <div class="container">
+          <div class="titulo">
+                <h2>Resultado de busqueda para: "{{query}}"</h2>
+</div>
+          <div class="col-4 mx-auto mb-5">
 <Product v-for="product in products" :key="product.id" :product="product"/>
-      <h2>Resultado de busqueda para: "{{query}}"</h2>
+          </div>
+      </div>
+
   </div>
 </template>
 

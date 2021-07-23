@@ -1,8 +1,13 @@
 <template>
   <div>
-     <h2>Categoria</h2>
+      <div class="container">
+          <div class="titulo">
+              <span> Categoria de: {{category.name}}</span>
+          </div>
+      <div class="col-12 mb-5">
 <Product v-for="product in category.products" :key="product.id" :product="product"/>
-{{category.name}}
+  </div>
+  </div>
   </div>
 </template>
  
@@ -51,5 +56,12 @@ export default {
 </script>
 
 <style>
-
+.titulo{
+    text-align: center;
+    margin-top: 2rem;
+    color: white;
+        font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
 </style>

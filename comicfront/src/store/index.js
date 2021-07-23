@@ -29,15 +29,14 @@ export default new Vuex.Store({
 
     },
     addToCar(state,item){
-      const exists = state.car.items.filter(i => i.product.id === i.product.id)
-
-      if (exists.length){
+         const exists = state.car.items.filter(i => i.product.id === item.product.id)
+      if (exists.length) {
         exists[0].quantity = parseInt(exists[0].quantity) + parseInt(item.quantity)
-      }else{
+      } else {
         state.car.items.push(item)
       }
-      localStorage.setItem('car',JSON.stringify(state.car))
 
+      localStorage.setItem('car', JSON.stringify(state.car))
     },
     setIsLoading(state,status){
       state.isLoading = status
