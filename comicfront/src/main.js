@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import * as Vue2Leaflet from 'vue2-leaflet'; // VALID
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+import VueSplide from '@splidejs/vue-splide';
 
 Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
@@ -17,6 +18,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(Vue2Leaflet )
 Vue.use( axios)
+Vue.use( VueSplide );
 Vue.config.productionTip = false
 
 new Vue({

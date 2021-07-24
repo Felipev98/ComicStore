@@ -41,7 +41,7 @@ import axios from 'axios'
 import Category from '../components/Category.vue'
 import Product from '../components/Product.vue'
 import Mapa from '../components/Mapa.vue'
-import Footer from '../components/Footer.vue'
+import Footer from './Footer.vue'
 import Banner from '../components/Banner.vue'
 
 

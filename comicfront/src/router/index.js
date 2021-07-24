@@ -10,6 +10,8 @@ import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
 import MyAccount from '../views/MyAccount.vue'
 import Checkout from '../views/Checkout.vue'
+import Acerca from '../views/Acerca.vue'
+import Nosotros from '../views/Nosotros.vue'
 Vue.use(VueRouter)
 const routes = [
   {
@@ -53,9 +55,18 @@ const routes = [
     name: 'Car',
     component: Car
   },
-
   {
-    path: '/cart/checkout',
+    path: '/acerca',
+    name: 'Acerca',
+    component: Acerca
+  },
+  {
+    path: '/nosotros',
+    name: 'Nosotros',
+    component: Nosotros
+  },
+  {
+    path: '/car/checkout',
     name: 'Checkout',
     component: Checkout,
     meta: {

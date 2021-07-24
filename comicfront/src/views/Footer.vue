@@ -5,13 +5,18 @@
             <span>Todos los derechos reservados</span>
             <p>Realizado por Vargas Felipe</p>
         </div>
+        <Carousel/>
     </div>
 </div>
 </template>
 
 <script>
+import Carousel from '../components/Carousel.vue'
 export default {
-    name:'Footer'
+    name:'Footer',
+    components:{
+        Carousel
+    }
 }
 </script>
 
