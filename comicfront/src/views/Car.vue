@@ -3,7 +3,7 @@
   <div>
       <div class="container">
           <div class="row">
-      <table class="table" v-if="carTotalLength">
+      <table class="table table table-hover" v-if="carTotalLength">
 <thead>
     <tr>
       <th scope="col">Producto</th>

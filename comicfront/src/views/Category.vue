@@ -5,7 +5,7 @@
               <span> Categoria de: {{category.name}}</span>
           </div>
       <div class="col-12 mb-5">
-<Product v-for="product in category.products" :key="product.id" :product="product"/>
+<Productss v-for="product in category.products" :key="product.id" :product="product"/>
   </div>
   </div>
   </div>
@@ -13,11 +13,11 @@
  
 <script>
 import axios from 'axios'
-import Product from '../components/Product.vue'
+import Productss from '../components/Productss.vue'
 export default {
     name: 'Category',
     components: {
-        Product
+        Productss
     },
     data() {
         return {

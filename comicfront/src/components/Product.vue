@@ -1,24 +1,22 @@
 <template>
 <div>
-    <div class="container">
-<div class="row">
-    <div class="col-md-4 col-xl-12 mt-5">
-      <div class="card card-inverse  text-center">
-        <img class="card-img-top imagen-1" :src="product.get_thumbnail" alt="Card image cap">
-                            <span class="precio"> ${{product.price}}</span>
-
-        <div class="card-block">
-          <h4 class="card-title">{{product.name}}</h4>
-        <p class="card-subtext">{{product.description}}</p>
-                        <div class="boton-vermas mb-3">
+  <b-carousel-slide>
+    <template v-slot:img>
+      <b-card-group>
+        <b-card>
+          <img  id="imagen" :src="product.get_thumbnail" alt="">
+          <h2 class="titulo">{{product.name}}</h2>
+          <span class="texto">{{product.description}}</span>
+          
+          <span class="precio"> ${{product.price}}</span>
+          <span>{{product.price}}</span>
+           <div class="boton-vermas mb-3">
                     <router-link :to="product.get_absolute_url">Ver más</router-link>
                     </div>
-        </div>
-      </div>
-
-</div>
-</div>
-</div>
+       </b-card>
+      </b-card-group>
+    </template>
+  </b-carousel-slide>
     </div>
     
 
@@ -34,44 +32,22 @@ export default {
 </script>
 
 <style >
+ #imagen{
+  width: 50%;
+} 
+.card-body{
+  text-align: center ;
+  height: 42rem;
+  border: none;
+  box-shadow: 0px 9px 32px -1px black;
+}
+.card{
+    background-color:  #00293D !important;
 
-.card.card-inverse img{
-width: 8rem;
-margin: auto;
-padding-top: 1rem;
-position: relative;
 }
-.card.card-inverse{
-        box-shadow: 0px 9px 32px -1px black;
-        background-color: #00293D;
-
-}
-.card-title {
-font-family: 'Poppins', sans-serif;
-font-size: 1.3rem;
-font-weight: 600;
-padding-top: 0.3rem;
-color: white;
-}
-.card-subtext{
-font-family: 'Poppins', sans-serif;
-font-weight: 400;
-}
-.precio {
-    font-weight: 700;
-    font-size: 1.1rem;
-    position: absolute;
-    left: 13rem;
-    top: 10rem;
-    width: 4rem;
-    background: #064A68;
-    border-radius: 100;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
-    color: white;
+.card-group{
+  width: 35%;
+  margin: auto;
 }
 .boton-vermas{
     width: 50%;
@@ -86,14 +62,33 @@ font-weight: 400;
     text-decoration: none;
 font-family: 'Poppins', sans-serif;
 }
-.card-subtext {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    padding: 0.5rem;
-    text-align: justify;
-    color: white;
+.titulo{
+  font-family: 'Poppins', sans-serif;
+font-size: 1.3rem;
+font-weight: 600;
+padding-top: 0.3rem;
+color: white;
 }
-.col-12{
+.texto{
+    font-family: 'Poppins', sans-serif;
+font-weight: 400;
+padding-top: 0.3rem;
+color: white;
+}
+.precio {
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 15rem;
+    top:14rem;
+    width: 4rem;
+    background: #064A68;
+    border-radius: 100;
+    height: 4rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    color: white;
 }
 </style>

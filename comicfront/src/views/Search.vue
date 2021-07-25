@@ -5,7 +5,7 @@
                 <h2>Resultado de busqueda para: "{{query}}"</h2>
 </div>
           <div class="col-4 mx-auto mb-5">
-<Product v-for="product in products" :key="product.id" :product="product"/>
+<Productss v-for="product in products" :key="product.id" :product="product"/>
           </div>
       </div>
 
@@ -14,11 +14,11 @@
 
 <script>
 import axios from 'axios'
-import Product from '../components/Product.vue'
+import Productss from '../components/Productss.vue'
 export default {
     name: 'Search',
     components: {
-        Product
+        Productss
     },
     data() {
         return {

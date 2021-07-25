@@ -18,6 +18,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+
   },
   {
     path: '/about',
@@ -53,7 +54,8 @@ const routes = [
   {
     path: '/car',
     name: 'Car',
-    component: Car
+    component: Car,
+
   },
   {
     path: '/acerca',
@@ -76,7 +78,10 @@ const routes = [
   {
     path: '/:category_slug/:product_slug',
     name: 'Product',
-    component: Product
+    component: Product,
+    meta: {
+      requireLogin: true
+  }
   },
   {
     path: '/:category_slug',

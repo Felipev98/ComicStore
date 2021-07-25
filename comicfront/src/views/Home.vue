@@ -11,17 +11,29 @@
       <h2>Últimos comics</h2>
 
       </div>
-      <div class="col-12">
+  <b-carousel d="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators>
+
     <Product v-for="product in latestProducts" :key="product.id" :product="product"/>
-      
+
+     </b-carousel>
+     
+ 
       </div>
       <div class="seccion-mas">
        <div class="comics-titulo text-center">
       <h2>Más comics</h2>
       </div>
-   <div class="col-12">
+       <b-carousel d="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators>
     <Product v-for="product in ProductList" :key="product.id" :product="product"/>
-      </div>
+               </b-carousel>
 
       </div>
 
@@ -31,9 +43,9 @@
  <Mapa/>
 </div>
   </div>
-  </div>
-  <Footer/>
+   <Footer/>
 </div>
+ 
 </template>
 
 <script>
