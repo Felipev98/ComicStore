@@ -6,30 +6,30 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="categorias">
-                    <span>Terror</span>
+                    <router-link to="/terror" ><span >Terror</span></router-link>
                 </div>
                  <div class="categorias">
-                    <span>Aventura</span>
+                    <router-link to="/aventura" ><span>Aventura</span></router-link>
                 </div>
                  <div class="categorias">
-                    <span>Psicológico</span>
+                    <router-link to="/psicologico" ><span>Psicológico</span></router-link>
                 </div>
                  <div class="categorias">
-                    <span>Humorístico</span>
+                    <router-link to="humoristico" ><span>Humorístico</span></router-link>
                 </div>
             </div>
                 <div class="col-xl-12">
                 <div class="categorias">
-                    <span>Policial</span>
+                    <router-link to="/policial"><span>Policial</span></router-link>
                 </div>
                  <div class="categorias">
-                    <span>Romántico</span>
+                    <router-link to="/romantico" ><span>Romántico</span></router-link>
                 </div>
                  <div class="categorias">
-                    <span>Misterio</span>
+                    <router-link to="/misterio" ><span>Misterio</span></router-link>
                 </div>
                  <div class="categorias">
-                    <span>Bélico</span>
+                    <router-link to="/belico" ><span>Bélico</span></router-link>
                 </div>
                 
             </div>
@@ -69,5 +69,17 @@ name:'Category'
     background-color: #5A6970;
     width: 15%;
     border-radius: 2rem;
+    transition: all 0.4s ease-in-out;
+}
+.categorias:hover{
+    background-color: #A6C2CF;
+}
+.categorias a{
+    text-decoration: none;
+    color: white;
+    
+}
+.categorias a:hover{
+    color: #525658 !important;
 }
 </style>

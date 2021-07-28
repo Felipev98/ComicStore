@@ -1,7 +1,8 @@
 from django.db.models import Q
 from django.shortcuts import render
 from django.http import Http404
-from rest_framework import serializers
+from rest_framework import serializers,viewsets, generics
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -47,4 +48,3 @@ def search(request):
         return Response(serializer.data)
     else:
         return Response({"products":[]})
-

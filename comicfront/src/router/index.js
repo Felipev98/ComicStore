@@ -8,10 +8,9 @@ import Search from '../views/Search.vue'
 import Car from '../views/Car.vue'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
-import MyAccount from '../views/MyAccount.vue'
-import Checkout from '../views/Checkout.vue'
 import Acerca from '../views/Acerca.vue'
 import Nosotros from '../views/Nosotros.vue'
+
 Vue.use(VueRouter)
 const routes = [
   {
@@ -39,14 +38,6 @@ const routes = [
     component: LogIn
   },
   {
-    path: '/my-account',
-    name: 'MyAccount',
-    component: MyAccount,
-    meta: {
-        requireLogin: true
-    }
-  },
-  {
     path: '/search',
     name: 'Search',
     component: Search
@@ -55,26 +46,23 @@ const routes = [
     path: '/car',
     name: 'Car',
     component: Car,
+    meta: {
+      requireLogin: true
+  }
 
   },
   {
     path: '/acerca',
     name: 'Acerca',
-    component: Acerca
+    component: Acerca,
+
   },
   {
     path: '/nosotros',
     name: 'Nosotros',
     component: Nosotros
   },
-  {
-    path: '/car/checkout',
-    name: 'Checkout',
-    component: Checkout,
-    meta: {
-        requireLogin: true
-    }
-  },
+
   {
     path: '/:category_slug/:product_slug',
     name: 'Product',

@@ -22,49 +22,49 @@
   </div>
   </div>
 </template>
-
 <script>
+
 import axios from 'axios'
 export default {
-name:'SignUp',
-data() {
-    return {
-        username:'',
-        password:'',
-        password2:'',
-        errors:[]
-    }
-},
-methods: {
-    submitForm(){
-        if(this.username === '' || this.username.length < 6){
-            this.errors.push('Su nombre de usuario es demasiado corto')
+    name: 'SignUp',
+    data() {
+        return {
+            username: '',
+            password: '',
+            password2: '',
+            errors: []
         }
-        if(this.password === '' || this.password.length < 6 ){
-            this.errors.push("La contraseña es demasiado corta")
-        }
-        if(this.password !== this.password2){
-            this.errors.push("Las contraseñas no coinciden")
-        }
-        if (!this.errors.length){
-            const formData ={
-                username: this.username,
-                password: this.password
+    },
+    methods: {
+        submitForm() {
+            this.errors = []
+            if (this.username === '') {
+                this.errors.push('Introduzca un nombre de usuario')
             }
-            axios
-                .post("/api/v1/users/",formData)
-                .then(response =>{
-                alert("Usuario creado con")    
-                this.$router.push('/log-in')
-     })
-     .catch(error => {
+            if (this.password === '') {
+                this.errors.push('La contraseña es demasiado corta')
+            }
+            if (this.password !== this.password2) {
+                this.errors.push('Las contraseñas no coinciden')
+            }
+            if (!this.errors.length) {
+                const formData = {
+                    username: this.username,
+                    password: this.password
+                }
+                axios
+                    .post("/api/v1/users/", formData)
+                    .then(response => {
+                        this.$router.push('/log-in')
+                    })
+                    .catch(error => {
                         if (error.response) {
                             for (const property in error.response.data) {
                                 this.errors.push(`${property}: ${error.response.data[property]}`)
                             }
                             console.log(JSON.stringify(error.response.data))
                         } else if (error.message) {
-                            this.errors.push('Algo ocurrió, por favor intenta de nuevo')
+                            this.errors.push('Algo falló, por favor intente de nuevo')
                             
                             console.log(JSON.stringify(error))
                         }

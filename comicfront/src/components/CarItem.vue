@@ -1,24 +1,25 @@
 <template>
 
   <div>
-      
+      <table class="table">
+
         <tr>
             <td scope="row" class="image"><img class="card-img-top imagen-1" :src="item.product.get_thumbnail" alt="Card image cap"></td>
-            <td>
-             <router-link :to="item.product.get_absolute_url">{{item.product.name}}</router-link>
+            <td class="nombre-producto text-center">
+             <router-link  :to="item.product.get_absolute_url">{{item.product.name}}</router-link>
             </td>
             <td>{{item.product.price}}</td>
-            <td>
-    <p>{{item.quantity}}</p>
-    <a  @click="decrementQuantity(item)">-</a>
-    <a  @click="incrementQuantity(item)">+</a>
-        </td>
-        <td><span>${{getItemTotal(item).toFixed(2)}}</span>
-    </td>
-    <td><button class="btn btn-danger" @click="removeFromCar(item)">Eliminar item</button>
-    </td>
-        </tr>
+            <td class="text-center">
+                    <span class="signos" style="cursor:pointer" @click="decrementQuantity(item)">-</span>
 
+    <span class="total">{{item.quantity}}</span>
+        <span class="signos" style="cursor:pointer" @click="incrementQuantity(item)">+</span>
+        </td>
+        <td class="text-center total"><span>${{getItemTotal(item).toFixed(2)}}</span>
+    </td>
+    <td class="text-center"><i @click="removeFromCar(item)" class="fas fa-trash-alt "></i></td>
+        </tr>
+</table>
   </div>
 </template>
 
@@ -62,5 +63,24 @@ export default {
 <style>
 .image{
     width: 100px;
+}
+.nombre-producto{
+    width: 32% ;
+}
+.nombre-producto a{
+    text-decoration: none;
+    color: white;
+     font-family: 'Poppins', sans-serif;
+
+}
+.table td{
+    color: white;
+}
+.total{
+font-family: 'Poppins', sans-serif;
+
+}
+span .signos{
+    cursor: pointer !important;
 }
 </style>

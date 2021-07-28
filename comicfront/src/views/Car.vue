@@ -2,27 +2,27 @@
 
   <div>
       <div class="container">
-          <div class="row">
-      <table class="table table table-hover" v-if="carTotalLength">
+          <div class="row headerr mt-5">
 <thead>
-    <tr>
+    <tr class="header">
       <th scope="col">Producto</th>
       <th scope="col">Nombre</th>
       <th scope="col">Precio</th>
       <th scope="col">Cantidad</th>
-        <th scope="col"></th>
+        <th scope="col" class="total" style="
+    transform: translateX(21px)">Total</th>
+        <th scope="col">Acción</th>
 
     </tr>
   </thead>
   <tbody>
 <CarItem v-for="item in car.items" :key="item.product.id" :initialItem="item" v-on:removeFromCar="removeFromCar" />
   </tbody>
-</table>
-    <p v-else>No hay productos</p>
-    <div>
-        <strong>{{carTotalPrice.toFixed(2)}}, {{carTotalLength}} productos</strong>
+
+    <div class="tabla-footer">
+        <span>{{carTotalPrice.toFixed(2)}}, {{carTotalLength}} productos</span>
         <hr>
-        <router-link to="/car/checkout" class="btn btn-danger" >checkout</router-link>
+        <router-link to="#" class="btn btn-danger" >Comprar</router-link>
     </div>
        
 </div>
@@ -70,4 +70,33 @@ export default {
 </script>
 
 <style>
+.header{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+
+}
+.header th{
+    color: white;
+            font-family: 'Poppins', sans-serif;
+
+}
+
+.headerr{
+    background: #11242D;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+        box-shadow: 0px 9px 32px -1px black;
+}
+.tabla-footer{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+                font-family: 'Poppins', sans-serif;
+}
+.tabla-footer span{
+font-weight: 700;
+margin-right: 1rem;
+}
 </style>

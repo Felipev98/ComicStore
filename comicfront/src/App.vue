@@ -2,25 +2,26 @@
 <div class="navbar-section">
 
   <b-navbar toggleable="lg" type="dark"  class="navbar">
-    <b-navbar-brand href="#" class="ml-50">Comic <span>Store</span></b-navbar-brand>
+    <router-link to="/" ><b-navbar-brand class="ml-50">Comic <span>Store</span></b-navbar-brand></router-link>
 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="mx-auto prueba">
-        <b-nav-item href="#">Acerca</b-nav-item>
-        <b-nav-item href="#">Nosotros</b-nav-item>
-        <b-nav-item href="#">Ubicación</b-nav-item>
+       <b-nav-item :to="{name: 'Acerca'}" >Acerca</b-nav-item>
+        <b-nav-item :to="{name: 'Nosotros'}" href="#">Nosotros</b-nav-item>
+        <b-nav-item href="#ubicacion">Ubicación</b-nav-item>
       </b-navbar-nav>
 
         <b-navbar-nav class="mr">
           <b-nav-form class="iconos">
           <i v-b-modal.modal-1 class="fa fa-search" aria-hidden="true"></i>
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          
+          <router-link to="/car" ><i class="fa fa-shopping-cart" aria-hidden="true"></i></router-link>
         </b-nav-form>
                   <p id="car-total">{{carTotalLength}}</p>
         <b-nav-form>
           <template v-if="$store.state.isAuthenticated">
-            <router-link to="/my-account" class="btn btn-success">Mi perfil</router-link>
+    <button @click="logout()" class="btn btn-danger">Desconectar</button>
           </template>
             <template v-else>
             <router-link to="/log-in" class="btn-login">Iniciar sesión</router-link>
@@ -56,7 +57,7 @@ export default {
       }
     }
   },
-  beforeCreate() {
+beforeCreate() {
     this.$store.commit('initializeStore')
     const token = this.$store.state.token
     if (token) {
@@ -76,7 +77,17 @@ export default {
       }
       return totalLength
     }
-  }
+  },
+  methods: {
+        logout() {
+            axios.defaults.headers.common["Authorization"] = ""
+            localStorage.removeItem("token")
+            localStorage.removeItem("username")
+            localStorage.removeItem("userid")
+            this.$store.commit('removeToken')
+            this.$router.push('/')
+        },
+}
 }
 </script>
 <style >
@@ -148,5 +159,10 @@ li.form-inline.iconos{
     border-radius: 1.4rem;
     text-decoration: none;
 }
-
+ i{
+  color: white ;
+}
+a.router-link-active{
+  text-decoration: none ;
+}
 </style>

@@ -3,33 +3,33 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export default new Vuex.Store ({
   state: {
-    car:{
-      items: []
+    car: {
+        items: [],
     },
-    IsAuthenticated:false,
+    isAuthenticated: false,
     token: '',
     isLoading: false
   },
   mutations: {
-    initializeStore(state){
-      if(localStorage.getItem('car')){
+    initializeStore(state) {
+      if (localStorage.getItem('car')) {
         state.car = JSON.parse(localStorage.getItem('car'))
-      }else{
-        localStorage.setItem('car',JSON.stringify(state.car))
-      }
-      if(localStorage.getItem('token')){
-        state.token = localStorage.getItem('token')
-        state.IsAuthenticated = true
-      }else{
-        state.token = ''
-        state.IsAuthenticated = false
+      } else {
+        localStorage.setItem('car', JSON.stringify(state.car))
       }
 
+      if (localStorage.getItem('token')) {
+          state.token = localStorage.getItem('token')
+          state.isAuthenticated = true
+      } else {
+          state.token = ''
+          state.isAuthenticated = false
+      } 
     },
-    addToCar(state,item){
-         const exists = state.car.items.filter(i => i.product.id === item.product.id)
+    addToCar(state, item) {
+      const exists = state.car.items.filter(i => i.product.id === item.product.id)
       if (exists.length) {
         exists[0].quantity = parseInt(exists[0].quantity) + parseInt(item.quantity)
       } else {
@@ -38,17 +38,17 @@ export default new Vuex.Store({
 
       localStorage.setItem('car', JSON.stringify(state.car))
     },
-    setIsLoading(state,status){
+    setIsLoading(state, status) {
       state.isLoading = status
     },
     setToken(state, token) {
-      state.token = token
-      state.isAuthenticated = true
-  },  
-  removeToken(state) {
-      state.token = ''
-      state.isAuthenticated = false
-  },
+        state.token = token
+        state.isAuthenticated = true
+    },  
+    removeToken(state) {
+        state.token = ''
+        state.isAuthenticated = false
+    },
   },
   actions: {
   },

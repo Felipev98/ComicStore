@@ -7,7 +7,7 @@
       <h2 class="text-center text-light mb-4">Iniciar sesión</h2>
       <form @submit.prevent="submitForm" action="">
           <input class="input d-block mx-auto" type="text" v-model="username" placeholder="Nombre de usuario">
-            <input class="input d-block mx-auto mt-4" type="text" v-model="password" placeholder="Contraseña">
+            <input class="input d-block mx-auto mt-4" type="password" v-model="password" placeholder="Contraseña">
             <div  v-if="errors.length">
                 <p v-for="error in errors" :key="error">{{error}}</p>
             </div>

@@ -12,7 +12,6 @@
 
       </div>
   <b-carousel d="carousel-1"
-      v-model="slide"
       :interval="4000"
       controls
       indicators>
@@ -28,7 +27,6 @@
       <h2>Más comics</h2>
       </div>
        <b-carousel d="carousel-1"
-      v-model="slide"
       :interval="4000"
       controls
       indicators>
