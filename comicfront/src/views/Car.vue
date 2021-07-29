@@ -20,9 +20,10 @@
   </tbody>
 
     <div class="tabla-footer">
-        <span>{{carTotalPrice.toFixed(2)}}, {{carTotalLength}} productos</span>
+        <span class="d-flex  align-items-center">${{carTotalPrice.toFixed(2)}}, {{carTotalLength}} productos</span>
         <hr>
-        <router-link to="#" class="btn btn-danger" >Comprar</router-link>
+        <button class="comprar" @click="compra">Comprar</button>
+        
     </div>
        
 </div>
@@ -52,7 +53,18 @@ export default {
     methods: {
       removeFromCar(item){
         this.car.items = this.car.items.filter(i => i.product.id !== item.product.id)
-          }  
+          },
+        compra(){
+            this.$swal({
+                toast:true,
+                position:'top-end',
+                showConfirmButton: false,
+                icon: 'success',
+                timer:3000,
+                text:"Compra realizada con éxito!"
+            })
+        }  
+          
     },
     computed:{
         carTotalLength() {
@@ -87,16 +99,35 @@ export default {
     background: #11242D;
     margin-top: 2rem;
     margin-bottom: 2rem;
-        box-shadow: 0px 9px 32px -1px black;
+    box-shadow: 0px 9px 32px -1px black;
+    transition: all 0.3s ease-in-out;
+}
+.headerr:hover{
+box-shadow: 0px 13px 42px -1px #464646;
 }
 .tabla-footer{
     display: flex;
     justify-content: flex-end;
     color: white;
-                font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .tabla-footer span{
 font-weight: 700;
 margin-right: 1rem;
+}
+.comprar {
+    width: 12%;
+    padding: 0.8rem;
+    background: #FFC107;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    color:#455A64;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+.comprar:hover{
+    background-color: #FFDE7A;
 }
 </style>

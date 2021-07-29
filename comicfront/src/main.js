@@ -8,6 +8,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import * as Vue2Leaflet from 'vue2-leaflet'; // VALID
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 import VueSplide from '@splidejs/vue-splide';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
@@ -18,6 +20,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(Vue2Leaflet )
 Vue.use( axios)
+Vue.use(VueSweetalert2);
 Vue.use( VueSplide );
 Vue.config.productionTip = false
 

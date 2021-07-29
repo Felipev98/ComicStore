@@ -11,21 +11,23 @@
       <h2>Últimos comics</h2>
 
       </div>
+    <div class="text-center">
+  <b-spinner variant="success" label="Spinning"  v-if="$store.state.isLoading"></b-spinner>
+</div>
   <b-carousel d="carousel-1"
       :interval="4000"
       controls
       indicators>
-
     <Product v-for="product in latestProducts" :key="product.id" :product="product"/>
-
      </b-carousel>
-     
- 
       </div>
       <div class="seccion-mas">
        <div class="comics-titulo text-center">
       <h2>Más comics</h2>
       </div>
+      <div class="text-center">
+  <b-spinner variant="success" label="Spinning"  v-if="$store.state.isLoading"></b-spinner>
+</div>
        <b-carousel d="carousel-1"
       :interval="4000"
       controls
@@ -71,25 +73,30 @@ export default {
     this.getProductList()
   },
   methods: {
-    getLatestProducts(){
-      axios
+    async getLatestProducts(){
+      this.$store.commit('setIsLoading',true)
+      await axios
       .get('/api/v1/latest-products/')
       .then(response =>{
         this.latestProducts = response.data
-        console.log(response)
+
       }).catch(error =>{
         console.log(error)
       })
+      this.$store.commit('setIsLoading',false)
     },
-    getProductList(){
-      axios
+    
+    async getProductList(){
+    this.$store.commit('setIsLoading',true)
+      await axios
       .get('/api/v1/product-list/')
       .then(response =>{
         this.ProductList = response.data
-        console.log(response)
       }).catch(error =>{
         console.log(error)
       })
+            this.$store.commit('setIsLoading',false)
+
     }
   },
 }

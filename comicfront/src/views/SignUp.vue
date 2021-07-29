@@ -12,7 +12,7 @@
             <div  v-if="errors.length">
                 <p v-for="error in errors" :key="error">{{error}}</p>
             </div>
-            <button class="boton-inicio d-block mx-auto mt-4 ">Registrarse</button>
+            <button @click="showAlert()" class="boton-inicio d-block mx-auto mt-4 ">Registrarse</button>
             <hr>
             <div class="boton-login">
             <router-link to="/log-in">Inicio de sesión</router-link>
@@ -56,6 +56,14 @@ export default {
                     .post("/api/v1/users/", formData)
                     .then(response => {
                         this.$router.push('/log-in')
+                        this.$swal({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        icon: 'success',
+                        text: 'Cuenta creada, porfavor ingresa',
+                        });
                     })
                     .catch(error => {
                         if (error.response) {
@@ -70,8 +78,8 @@ export default {
                         }
                     })
             }
-        }
-    }
+        },
+}
 }
 </script>
 

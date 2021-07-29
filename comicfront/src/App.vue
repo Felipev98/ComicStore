@@ -11,7 +11,6 @@
         <b-nav-item :to="{name: 'Nosotros'}" href="#">Nosotros</b-nav-item>
         <b-nav-item href="#ubicacion">Ubicación</b-nav-item>
       </b-navbar-nav>
-
         <b-navbar-nav class="mr">
           <b-nav-form class="iconos">
           <i v-b-modal.modal-1 class="fa fa-search" aria-hidden="true"></i>
@@ -21,7 +20,7 @@
                   <p id="car-total">{{carTotalLength}}</p>
         <b-nav-form>
           <template v-if="$store.state.isAuthenticated">
-    <button @click="logout()" class="btn btn-danger">Desconectar</button>
+    <button @click="logout()" class="boton-desconectar">Desconectar</button>
           </template>
             <template v-else>
             <router-link to="/log-in" class="btn-login">Iniciar sesión</router-link>
@@ -34,7 +33,6 @@
   </b-modal>
 </div>
         </b-nav-form>
-         
               </b-navbar-nav>
           </b-collapse>
 
@@ -164,5 +162,18 @@ li.form-inline.iconos{
 }
 a.router-link-active{
   text-decoration: none ;
+}
+.boton-desconectar{
+  margin-right: 1rem;
+  padding: 1rem;
+    background: #FB224E;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+.boton-desconectar:hover{
+  background-color: #FF6D8A;
 }
 </style>
