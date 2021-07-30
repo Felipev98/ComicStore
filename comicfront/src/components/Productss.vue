@@ -61,7 +61,7 @@ font-weight: 400;
     left: 13rem;
     top: 10rem;
     width: 4rem;
-    background: #064A68;
+    background: #106E9B;
     border-radius: 100;
     height: 4rem;
     display: flex;

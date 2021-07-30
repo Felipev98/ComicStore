@@ -4,7 +4,7 @@
           <div class="titulo">
               <span> Categoria de: {{category.name}}</span>
           </div>
-      <div class="col-12 mb-5">
+      <div class="col-4 mx-auto mb-5">
 <Productss v-for="product in category.products" :key="product.id" :product="product"/>
   </div>
   </div>
@@ -44,7 +44,7 @@ export default {
                 .get(`/api/v1/products/${categorySlug}/`)
                 .then(response => {
                     this.category = response.data
-                    document.title = this.category.name + ' | Djackets'
+                    document.title = this.category.name + ' | ComicStore'
                 })
                 .catch(error => {
                     console.log(error)
@@ -60,7 +60,7 @@ export default {
     text-align: center;
     margin-top: 2rem;
     color: white;
-        font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 2rem;
 }

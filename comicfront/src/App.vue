@@ -28,7 +28,7 @@
 <div>
   <b-modal id="modal-1" title="Buscar Comics">
      <form method="get" action="/search" >
-          <input type="text" placeholder="k kiere bucal?" name="query">
+          <input type="text" placeholder="Escriba el nombre del comic" name="query" class="input-buscar">
           </form>
   </b-modal>
 </div>
@@ -175,5 +175,22 @@ a.router-link-active{
 }
 .boton-desconectar:hover{
   background-color: #FF6D8A;
+}
+.btn.btn-secondary{
+display: none;
+}
+.btn.btn-primary{
+display: none;
+}
+.close{
+border: none;
+color: white;
+background-color: #086E9E;
+}
+.input-buscar{
+  outline: none;
+  border: none;
+  width:50%
+
 }
 </style>

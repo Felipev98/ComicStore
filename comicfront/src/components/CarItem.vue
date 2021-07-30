@@ -2,7 +2,6 @@
 
   <div>
       <table class="table">
-
         <tr>
             <td scope="row" class="image"><img class="card-img-top imagen-1" :src="item.product.get_thumbnail" alt="Card image cap"></td>
             <td class="nombre-producto text-center">

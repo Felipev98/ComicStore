@@ -10,7 +10,7 @@ export default new Vuex.Store ({
     },
     isAuthenticated: false,
     token: '',
-    isLoading: false
+    isLoading: false,
   },
   mutations: {
     initializeStore(state) {
@@ -41,6 +41,7 @@ export default new Vuex.Store ({
     setIsLoading(state, status) {
       state.isLoading = status
     },
+    
     setToken(state, token) {
         state.token = token
         state.isAuthenticated = true

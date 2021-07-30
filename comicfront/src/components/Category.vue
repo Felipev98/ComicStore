@@ -12,7 +12,7 @@
                     <router-link to="/aventura" ><span>Aventura</span></router-link>
                 </div>
                  <div class="categorias">
-                    <router-link to="/psicologico" ><span>Psicológico</span></router-link>
+                    <router-link to="/Psicologico" ><span>Psicológico</span></router-link>
                 </div>
                  <div class="categorias">
                     <router-link to="humoristico" ><span>Humorístico</span></router-link>
@@ -23,13 +23,13 @@
                     <router-link to="/policial"><span>Policial</span></router-link>
                 </div>
                  <div class="categorias">
-                    <router-link to="/romantico" ><span>Romántico</span></router-link>
+                    <router-link to="/Romantico" ><span>Romántico</span></router-link>
                 </div>
                  <div class="categorias">
                     <router-link to="/misterio" ><span>Misterio</span></router-link>
                 </div>
                  <div class="categorias">
-                    <router-link to="/belico" ><span>Bélico</span></router-link>
+                    <router-link to="/Belico" ><span>Bélico</span></router-link>
                 </div>
                 
             </div>

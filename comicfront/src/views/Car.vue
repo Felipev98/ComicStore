@@ -1,9 +1,9 @@
   <template>
 
   <div>
-      <div class="container">
+      <div class="container" v-if="carTotalLength">
           <div class="row headerr mt-5">
-<thead>
+<thead >
     <tr class="header">
       <th scope="col">Producto</th>
       <th scope="col">Nombre</th>
@@ -28,6 +28,14 @@
        
 </div>
 
+</div>
+<div v-else>
+    <div class="container">
+        <div class="error-busqueda">
+    <h2>Aún no has agregado un producto a tu carrito</h2>
+
+        </div>
+    </div>
 </div>
 </div>
 </template>
@@ -91,7 +99,7 @@ export default {
 }
 .header th{
     color: white;
-            font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 

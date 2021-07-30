@@ -2,9 +2,13 @@
   <div>
       <div class="container">
           <div class="row">
-              <div class="col-6">
-                  <div class="imagen-comic">
+              <div class="col-6"><div class="overlay">
+
+                  <div class="imagen-fondo" :style="imageStyleObject">
+                      <div class="imagen-comic">
                       <img :src="product.get_thumbnail" alt="comic">
+                  </div>
+                </div>
                   </div>
               </div>
               <div class="col-6">
@@ -22,14 +26,14 @@
                   </div>
               </div>
           </div>
-      </div>
       <h2>
-      </h2>
-    
+      </h2>          
+      </div>
       <div class="text-center">
   <b-spinner variant="success" label="Spinning"  v-if="$store.state.isLoading"></b-spinner>
 </div>
-  </div>
+      </div>
+
 </template>
 <script>
 import axios from 'axios'
@@ -71,6 +75,13 @@ export default {
             this.$store.commit('addToCar',item)
         }
     },
+    computed: { 
+  imageStyleObject() {
+    return {
+        backgroundImage: `url(${this.product.get_thumbnail})`,
+    }
+  }
+}
 }
 </script>
 
@@ -78,8 +89,11 @@ export default {
 .imagen-comic img{
     width: 20rem;
     margin-top: 2rem;
-        box-shadow: 0px 9px 32px -1px #236482;
-
+    box-shadow: 0px 9px 32px -1px #236482;
+}
+.imagen-comic{
+    padding-bottom: 1rem;
+    text-align: center;
 }
 .comic-nombre{
     margin-top: 2rem;
@@ -115,5 +129,12 @@ padding: 0.8rem;
     border: none;
     outline: none;
     padding: 0.2rem;
+}
+.imagen-fondo{
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        margin-top: 1rem;
 }
 </style>

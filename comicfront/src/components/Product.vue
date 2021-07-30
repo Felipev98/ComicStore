@@ -8,7 +8,7 @@
           <h2 class="titulo">{{product.name}}</h2>
           <span class="texto">{{product.description}}</span>
           
-          <span class="precio"> ${{product.price}}</span>
+          <span class="precios"> ${{product.price}}</span>
           <span>{{product.price}}</span>
            <div class="boton-vermas mb-3">
                     <router-link :to="product.get_absolute_url">Ver más</router-link>
@@ -75,14 +75,14 @@ font-weight: 400;
 padding-top: 0.3rem;
 color: white;
 }
-.precio {
+.precios {
     font-weight: 700;
     font-size: 1.1rem;
     position: absolute;
     left: 15rem;
     top:14rem;
     width: 4rem;
-    background: #064A68;
+    background: #106E9B;
     border-radius: 100;
     height: 4rem;
     display: flex;
