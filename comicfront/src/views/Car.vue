@@ -37,15 +37,18 @@
         </div>
     </div>
 </div>
+    <Footer/>
+
 </div>
 </template>
 
 <script>
 import CarItem from '../components/CarItem.vue'
+import Footer from '../components/Footer.vue'
 export default {
     name:"Car",
     components:{
-        CarItem
+        CarItem,Footer
     },
     data() {
         return {

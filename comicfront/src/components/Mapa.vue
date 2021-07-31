@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="col-xl-6">
-<div style="height: 80vh;width: 39rem;margin: auto;margin-bottom: 4rem;">
+<div class="mapa">
     <LMap :zoom="zoom" :center="center">
       <LTileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
 ></LTileLayer>
@@ -55,4 +55,25 @@ align-items: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
+.mapa{
+  height: 80vh;
+  width: 39rem;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+/* Media Querie */
+@media screen and (max-width:539px){
+  .mapa{
+    height: 60vh;
+  }
+.texto{
+margin-top: 1rem;
+margin-bottom: 1rem;
+  }
+.texto h2{
+font-size: 0.9rem;
+  }
+}
+
+
 </style>

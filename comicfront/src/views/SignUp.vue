@@ -4,7 +4,7 @@
                       <div class="imagen text-center">
                 <img src="../assets/User.svg" alt="User">
             </div>
-      <h2  class="text-center text-light mb-4">Iniciar sesión</h2>
+      <h2  class="text-center text-light mb-4">Registrarse</h2>
       <form @submit.prevent="submitForm" action="">
           <input class="input d-block mx-auto" type="text" v-model="username" placeholder="Nombre de usuario">
             <input class="input d-block mx-auto mt-4" type="text" v-model="password" placeholder="Contraseña">
@@ -18,15 +18,19 @@
             <router-link to="/log-in">Inicio de sesión</router-link>
             </div>
       </form>
-
   </div>
+  <Footer/>
   </div>
 </template>
 <script>
 
 import axios from 'axios'
+import Footer from '../components/Footer.vue'
 export default {
     name: 'SignUp',
+    components:{
+        Footer
+    },
     data() {
         return {
             username: '',

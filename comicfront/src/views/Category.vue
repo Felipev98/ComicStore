@@ -8,16 +8,18 @@
 <Productss v-for="product in category.products" :key="product.id" :product="product"/>
   </div>
   </div>
+  <Footer/>
   </div>
 </template>
  
 <script>
 import axios from 'axios'
 import Productss from '../components/Productss.vue'
+import Footer from '../components/Footer.vue'
 export default {
     name: 'Category',
     components: {
-        Productss
+        Productss,Footer
     },
     data() {
         return {

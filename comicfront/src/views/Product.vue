@@ -27,24 +27,31 @@
               </div>
           </div>
       <h2>
-      </h2>          
+      </h2>    
+      
       </div>
+
       <div class="text-center">
   <b-spinner variant="success" label="Spinning"  v-if="$store.state.isLoading"></b-spinner>
 </div>
-      </div>
-
+<Footer/>
+ </div>
 </template>
 <script>
 import axios from 'axios'
+import Footer from '../components/Footer.vue'
 export default {
     name: 'Product',
+        components:{
+        Footer
+    },
     data() {
         return {
             product:{},
             quantity:1
         }
     },
+
     mounted() {
         this.getProduct()
     },

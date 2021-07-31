@@ -53,7 +53,7 @@ import axios from 'axios'
 import Category from '../components/Category.vue'
 import Product from '../components/Product.vue'
 import Mapa from '../components/Mapa.vue'
-import Footer from './Footer.vue'
+import Footer from '../components/Footer.vue'
 import Banner from '../components/Banner.vue'
 
 
@@ -113,7 +113,7 @@ export default {
   font-family: 'Poppins', sans-serif;
 }
 .comics-titulo h2{
-  font-weight: 600;
+  font-weight: 700;
   font-size: 2rem;
   color:white;
     font-family: 'Poppins', sans-serif;
@@ -127,5 +127,30 @@ export default {
 }
 .titulo-ubicacion.text-center h2{
 font-weight: 600;
+}
+/* Media Queries */
+@media screen and (max-width:539px){
+  .card-group{
+    width: 100%;
+  }
+  .comics-titulo{
+    margin-bottom: 2rem;
+  }
+  .comics-titulo h2{
+    font-size:1.5rem;
+  }
+  .card-body h2{
+    font-size: 1.3rem;
+  }
+    .card-body span{
+    font-size: 0.9rem;
+  }
+  .card-body {
+    height: 38rem;
+  }
+.titulo-ubicacion.text-center{
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
 }
 </style>

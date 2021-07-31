@@ -70,7 +70,7 @@ padding-top: 0.3rem;
 color: white;
 }
 .texto{
-    font-family: 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;
 font-weight: 400;
 padding-top: 0.3rem;
 color: white;
@@ -90,5 +90,12 @@ color: white;
     align-items: center;
     border-radius: 100px;
     color: white;
+}
+/* Media Queries */
+@media screen and (max-width:539px) {
+  .boton-vermas{
+    margin-top: 1rem;
+  }
+  
 }
 </style>

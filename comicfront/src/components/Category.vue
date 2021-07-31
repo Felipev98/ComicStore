@@ -4,7 +4,7 @@
     <h2>Categorías</h2>
     <div class="container">
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-xl-12 col-md-6">
                 <div class="categorias">
                     <router-link to="/terror" ><span >Terror</span></router-link>
                 </div>
@@ -18,7 +18,7 @@
                     <router-link to="humoristico" ><span>Humorístico</span></router-link>
                 </div>
             </div>
-                <div class="col-xl-12">
+                <div class="col-xl-12 col-md-6">
                 <div class="categorias">
                     <router-link to="/policial"><span>Policial</span></router-link>
                 </div>
@@ -82,4 +82,13 @@ name:'Category'
 .categorias a:hover{
     color: #525658 !important;
 }
+/* Media Queries */
+@media screen and (max-width:539px){
+    .categorias{
+    padding: 0.3rem;
+    width: 28%;
+    margin-right: 0.3rem;
+}
+}
+
 </style>

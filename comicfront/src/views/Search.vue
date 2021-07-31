@@ -17,6 +17,7 @@
                   </div>
               </div>
           </div>
+          <Footer/>
       </div>
 
 </template>
@@ -24,10 +25,11 @@
 <script>
 import axios from 'axios'
 import Productss from '../components/Productss.vue'
+import Footer from '../components/Footer.vue'
 export default {
     name: 'Search',
     components: {
-        Productss
+        Productss,Footer
     },
     data() {
         return {

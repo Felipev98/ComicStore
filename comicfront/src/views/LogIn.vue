@@ -1,4 +1,6 @@
 <template>
+<div>
+
     <div class="container">
         <div class="login">
             <div class="imagen text-center">
@@ -17,14 +19,19 @@
             
       </form>
   </div>
-
+</div>
+<Footer/>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Footer from '../components/Footer.vue'
 export default {
 name:'LogIn',
+components:{
+    Footer
+},
 data() {
     return {
         username:'',
