@@ -1,6 +1,8 @@
 <template>
   <div>
 <Acerca/>
+<br>
+<br>
 <Footer/>
   </div>
 </template>

@@ -71,4 +71,5 @@ name:'Nosotros'
   font-style: italic;
   font-size: 0.8rem;
 }
+
 </style>

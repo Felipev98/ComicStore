@@ -2,7 +2,7 @@
 <div>
     <div class="container">
 <div class="row">
-    <div class="col-md-4 col-xl-12 mt-5">
+    <div class="col-xl-6 mx-auto mb-5">
       <div class="card card-inverse  text-center">
         <img class="card-img-top imagen-1" :src="product.get_thumbnail" alt="Card image cap">
                             <span class="precio"> ${{product.price}}</span>

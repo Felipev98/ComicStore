@@ -35,8 +35,6 @@
         </b-nav-form>
               </b-navbar-nav>
           </b-collapse>
-
-
   </b-navbar>
     <router-view>
   </router-view>
@@ -191,6 +189,10 @@ background-color: #086E9E;
   outline: none;
   border: none;
   width:50%
-
+}
+@media screen and (max-width:539px){
+  .navbar{
+    z-index: 99999;
+}
 }
 </style>

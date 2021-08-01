@@ -2,16 +2,15 @@
   <div>
       <div class="container">
           <div class="row">
-              <div class="col-6"><div class="overlay">
+              <div class="col-md-6 col-lg-6 col-xl-6">
 
                   <div class="imagen-fondo" :style="imageStyleObject">
                       <div class="imagen-comic">
                       <img :src="product.get_thumbnail" alt="comic">
                   </div>
                 </div>
-                  </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6 col-lg-6 col-xl-6">
                   <div class="comic-nombre">
                         <span>{{product.name}}</span>
                         <p>{{product.description}}</p>
@@ -143,5 +142,18 @@ padding: 0.8rem;
         margin-bottom: 1rem;
         padding-bottom: 1rem;
         margin-top: 1rem;
+}
+@media screen and (max-width: 539px){
+    .imagen-comic img{
+        width: 15rem;
+    }
+    .comic-nombre{
+        text-align: center;
+    }
+    .boton-añadir{
+        margin: auto;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
 }
 </style>

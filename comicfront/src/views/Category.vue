@@ -4,7 +4,7 @@
           <div class="titulo">
               <span> Categoria de: {{category.name}}</span>
           </div>
-      <div class="col-4 mx-auto mb-5">
+      <div class="col-md-1 col-xl-8 col-sm-12 mt-5 mx-auto">
 <Productss v-for="product in category.products" :key="product.id" :product="product"/>
   </div>
   </div>

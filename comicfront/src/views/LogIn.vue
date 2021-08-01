@@ -44,6 +44,22 @@ mounted() {
 },
 methods: {
     async submitForm() {
+        this.errors = []
+            if (this.username === '') {
+                this.errors.push('Introduzca un nombre de usuario')
+            }
+            if (this.password === '') {
+                this.errors.push('La contraseña es demasiado corta')
+            }
+            if (this.password !== this.password2) {
+                this.errors.push('Las contraseñas no coinciden')
+            }
+            if (!this.errors.length) {
+                const formData = {
+                    username: this.username,
+                    password: this.password
+                }
+            }
             axios.defaults.headers.common["Authorization"] = ""
             localStorage.removeItem("token")
             const formData = {
@@ -98,7 +114,6 @@ methods: {
 .login h2{
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
-
 }
 .imagen img{
     width: 10rem;
@@ -110,5 +125,17 @@ font-weight: 600;
     border-radius: 0.8rem;
     border: none;
     outline: none;
+}
+@media screen and (max-width:539px){
+    .login{
+        width: 100%;
+        margin-bottom: 7rem;
+    }
+    .input{
+        width: 87%;
+    }
+    .boton-inicio{
+        width: 59%;
+    }
 }
 </style>
