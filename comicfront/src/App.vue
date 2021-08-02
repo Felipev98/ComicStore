@@ -4,12 +4,11 @@
   <b-navbar toggleable="lg" type="dark"  class="navbar">
     <router-link to="/" ><b-navbar-brand class="ml-50">Comic <span>Store</span></b-navbar-brand></router-link>
 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="mx-auto prueba">
        <b-nav-item :to="{name: 'Acerca'}" >Acerca</b-nav-item>
         <b-nav-item :to="{name: 'Nosotros'}" href="#">Nosotros</b-nav-item>
-        <b-nav-item id="ubicacion" >Ubicación</b-nav-item>
+        <b-nav-item href="#ubicacion" >Ubicacion</b-nav-item>
       </b-navbar-nav>
         <b-navbar-nav class="mr">
           <b-nav-form class="iconos">
@@ -95,6 +94,7 @@ beforeCreate() {
 <style >
 body{
   background-color: #1D3541 !important ;
+  scroll-behavior: smooth;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,600&display=swap');
 .navbar-brand {

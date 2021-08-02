@@ -44,6 +44,7 @@ box-shadow: 0px 9px 32px -1px black;
 @media screen and (max-width:539px) {
     .imagen-acerca{
         text-align: center;
+        margin-bottom:2rem;
     }    
     .imagen-acerca img{
         width: 20rem;

@@ -1,4 +1,5 @@
 <template>
+<div id="ubicacion">
 <div class="container">
 <div class="row">
   <div class="col-xl-6">
@@ -17,6 +18,8 @@
   </div>
 </div>
 </div>
+</div>
+
   
 </template>
 
@@ -56,7 +59,7 @@ align-items: center;
     font-weight: 400;
 }
 .mapa{
-  height: 80vh;
+  height: 70vh;
   width: 39rem;
   margin: auto;
   margin-bottom: 4rem;
