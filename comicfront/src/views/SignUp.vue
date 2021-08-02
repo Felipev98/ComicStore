@@ -82,7 +82,7 @@ export default {
                         }
                     })
             }
-        },
+     },
 }
 }
 </script>
@@ -102,5 +102,10 @@ border-radius: 0.8rem;
 .boton-login a{
     color: white;
 text-decoration: none;
+}
+@media screen and (max-width:539px){
+    .login{
+        width: 92% !important;
+    }
 }
 </style>

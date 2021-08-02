@@ -11,7 +11,7 @@
     <LMap :zoom="zoom" :center="center">
       <LTileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
 ></LTileLayer>
-      <LMarker :lat-lng="[13.1333682,77.5651881]"></LMarker>
+      <LMarker :lat-lng="[37.15117,-88.732]"></LMarker>
     </LMap>
   </div>
   </div>

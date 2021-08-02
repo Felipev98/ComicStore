@@ -14,7 +14,9 @@
                 <p v-for="error in errors" :key="error">{{error}}</p>
             </div>
             <button class="boton-inicio d-block mx-auto mt-4 ">Iniciar sesión</button>
-            
+              <div class="boton-registro mt-2">
+            <router-link to="/sign-up" >Registro</router-link>
+            </div>
             <hr>
             
       </form>
@@ -50,9 +52,6 @@ methods: {
             }
             if (this.password === '') {
                 this.errors.push('La contraseña es demasiado corta')
-            }
-            if (this.password !== this.password2) {
-                this.errors.push('Las contraseñas no coinciden')
             }
             if (!this.errors.length) {
                 const formData = {
@@ -126,9 +125,30 @@ font-weight: 600;
     border: none;
     outline: none;
 }
+.boton-registro{
+    padding: 0.8rem;
+    width: 40%;
+    background-color: #222D33;
+    border-radius: 0.8rem;
+    border: none;
+    outline: none;
+    margin:auto;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s e;
+}
+.boton-registro a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.boton-registro a:hover{
+color: #828282;
+}
 @media screen and (max-width:539px){
     .login{
         width: 100%;
+        margin-top: 3rem;
         margin-bottom: 7rem;
     }
     .input{
