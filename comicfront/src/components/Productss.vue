@@ -93,4 +93,11 @@ font-family: 'Poppins', sans-serif;
 .col-12{
     display: flex;
 }
+/* Media Queries */
+@media screen and (min-width:240px) and (max-width:340px){
+.precio{
+    left: 9rem;
+}
+
+}
 </style>

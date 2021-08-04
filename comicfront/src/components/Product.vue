@@ -96,6 +96,10 @@ color: white;
   .boton-vermas{
     margin-top: 1rem;
   }
+  .precios{
+    top: 12rem;
+    left: 13rem;
+  }
   
 }
 </style>

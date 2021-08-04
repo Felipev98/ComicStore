@@ -1,6 +1,5 @@
 <template>
 <div class="navbar-section">
-
   <b-navbar toggleable="lg" type="dark"  class="navbar">
     <router-link to="/" ><b-navbar-brand class="ml-50">Comic <span>Store</span></b-navbar-brand></router-link>
 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -11,14 +10,14 @@
         <b-nav-item href="#ubicacion" >Ubicacion</b-nav-item>
       </b-navbar-nav>
         <b-navbar-nav class="mr">
-          <b-nav-form class="iconos">
-          <i v-b-modal.modal-1 class="fa fa-search" aria-hidden="true"></i>
-          
+          <b-nav-item>
+             <b-nav-form class="iconos">
+          <i v-b-modal.modal-1 class="fa fa-search" aria-hidden="true"></i>        
           <router-link to="/car" ><i class="fa fa-shopping-cart" aria-hidden="true"></i></router-link>
         </b-nav-form>
+          </b-nav-item>
         <div class="cantidad">
                   <p id="car-total">{{carTotalLength}}</p>
-
         </div>
         <b-nav-form>
           <template v-if="$store.state.isAuthenticated">
@@ -27,7 +26,6 @@
             <template v-else>
               <b-nav-item>
               <router-link to="/log-in" class="btn-login">Iniciar sesión</router-link>
-
               </b-nav-item>
           </template>
 <div>

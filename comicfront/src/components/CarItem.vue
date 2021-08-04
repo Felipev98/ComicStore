@@ -7,8 +7,8 @@
             <td class="nombre-producto text-center">
              <router-link  :to="item.product.get_absolute_url">{{item.product.name}}</router-link>
             </td>
-            <td>{{item.product.price}}</td>
-            <td class="text-center">
+            <td id="producto-precio">{{item.product.price}}</td>
+            <td class="text-center" id="cantidad-numeros">
                     <span class="signos" style="cursor:pointer" @click="decrementQuantity(item)">-</span>
 
     <span class="total">{{item.quantity}}</span>
@@ -16,7 +16,7 @@
         </td>
         <td class="text-center total"><span>${{getItemTotal(item).toFixed(2)}}</span>
     </td>
-    <td class="text-center"><i @click="removeFromCar(item)" class="fas fa-trash-alt "></i></td>
+    <td class="text-center" id="icon"><i @click="removeFromCar(item)" class="fas fa-trash-alt "></i></td>
         </tr>
 </table>
   </div>
@@ -77,9 +77,27 @@ export default {
 }
 .total{
 font-family: 'Poppins', sans-serif;
-
 }
 span .signos{
     cursor: pointer !important;
+}
+@media screen and (max-width:539px){
+    .image{
+        display: none;
+    }
+    #icon{
+        display: none;
+    }
+    .nombre-producto{
+        transform: translateX(-11px);
+    }
+    #cantidad-numeros{
+        transform: translateX(12px);
+    }
+}
+@media screen and (min-width:240px) and (max-width:340px){
+    #producto-precio{
+        transform: translateX(17px);
+    }
 }
 </style>

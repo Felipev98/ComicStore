@@ -86,9 +86,24 @@ name:'Category'
 @media screen and (max-width:539px){
     .categorias{
     padding: 0.3rem;
-    width: 28%;
+    width: 36%;
     margin-right: 0.3rem;
 }
+}
+@media screen and (min-width:240px) and (max-width:340px){
+    .categorias{
+        width: 43%;
+    }
+    .categorias span{
+        font-size: 0.8rem;
+    }
+    .precios{
+        top: 9rem;
+        left: 10rem;
+    }
+    .boton-vermas{
+        padding:0.3rem !important;
+    }
 }
 
 </style>

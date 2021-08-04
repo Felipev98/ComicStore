@@ -57,4 +57,9 @@ box-shadow: 0px 9px 32px -1px black;
         font-size: 1rem;
     }
 }
+@media screen and (min-width:240px) and (max-width:340px){
+.imagen-acerca img{
+    width: 16rem;
+}
+}
 </style>

@@ -5,14 +5,13 @@
           <div class="row headerr mt-5">
 <thead >
     <tr class="header">
-      <th scope="col">Producto</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Cantidad</th>
+      <th scope="col" id="producto">Producto</th>
+      <th scope="col" id="nombre">Nombre</th>
+      <th scope="col" id="precio">Precio</th>
+      <th scope="col" id="cantidad">Cantidad</th>
         <th scope="col" class="total" style="
     transform: translateX(21px)">Total</th>
-        <th scope="col">Acción</th>
-
+        <th scope="col" id="accion">Acción</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +22,6 @@
         <span class="d-flex  align-items-center">${{carTotalPrice.toFixed(2)}}, {{carTotalLength}} productos</span>
         <hr>
         <button class="comprar" @click="compra">Comprar</button>
-        
     </div>
        
 </div>
@@ -140,5 +138,58 @@ margin-right: 1rem;
 }
 .comprar:hover{
     background-color: #FFDE7A;
+}
+.container{
+
+}
+/* Media Queries */
+@media screen and (max-width:539px){
+    #producto{
+        display: none;
+    }
+    #accion{
+        display: none;
+    }
+    th.total{
+        transform: translateX(-8px) !important;
+    }
+    #nombre{
+        transform: translateX(13px);
+    }
+    #cantidad{
+        transform: translateX(-12px);
+        
+    }
+    .container{
+        padding-right:var(--bs-gutter-x, 1.75rem) !important;
+        padding-left: var(--bs-gutter-x, 1.75rem) !important;
+    }
+    .comprar{
+        width: 32%;
+    }
+    .footer{
+        margin-top: 21rem;
+    }
+}
+@media screen and (min-width:240px) and (max-width:340px){
+    #precio{
+        margin-left: 1.3rem ;
+        margin-right: 1.3rem;
+    }
+    .total{
+        transform: translateX(15px);
+    }
+    #cantidad-numeros{
+        transform: translateX(23px);
+    }
+    #precio{
+        transform: translateX(-2px);
+    }
+    #nombre{
+        transform: translateX(-1px);
+    }
+    .comprar{
+        width: 40%;
+    }
 }
 </style>
