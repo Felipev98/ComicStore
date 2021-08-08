@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-xl-6">
     <div class="texto">
-      <h2>También contamos con una tienda fisica ubicada en bla bla bla</h2>
+      <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, quam ea quibusdam commodi officia ex distinctio, beatae possimus quos maxime corporis aut! Voluptates, ducimus fuga quisquam molestias assumenda quis repellat!</h2>
     </div>
   </div>
   <div class="col-xl-6">
@@ -19,8 +19,6 @@
 </div>
 </div>
 </div>
-
-  
 </template>
 
 <script>

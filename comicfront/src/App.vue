@@ -21,7 +21,9 @@
         </div>
         <b-nav-form>
           <template v-if="$store.state.isAuthenticated">
-    <button @click="logout()" class="boton-desconectar">Desconectar</button>
+            <b-nav-item>
+            <button @click="logout()" class="boton-desconectar">Desconectar</button>
+            </b-nav-item>
           </template>
             <template v-else>
               <b-nav-item>
@@ -39,8 +41,12 @@
               </b-navbar-nav>
           </b-collapse>
   </b-navbar>
-    <router-view>
+  <transition name="fade">
+      <router-view>
   </router-view>
+  </transition>
+
+
   </div>
 
 </template>
@@ -222,7 +228,11 @@ i.fa.fa-shopping-cart{
 .navbar-nav.mx-auto.prueba{
   margin-left: 0 !important;
 }
-
 }
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to  {
+  opacity: 0
+}
 </style>
