@@ -1,4 +1,6 @@
-# GentlemanApp
+# ComicStore
+
+![screenbud-f95ae486-2173-4a7f-9fa2-7d75b1ea5ef0](https://user-images.githubusercontent.com/83327665/147714272-ea482a67-42a6-43b3-bc68-47e42a5c63b8.png)
 
 
 _E commerce de una tienda ficticia usando Django Rest Framework + Vue_
@@ -10,7 +12,6 @@ _E commerce de una tienda ficticia usando Django Rest Framework + Vue_
 ## Technologies 🛠️
 _Client:_
 * Vue 
-* BootstrapVue
 * Django Rest Framework
 
 ## Features 📌
