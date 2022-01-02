@@ -16,8 +16,15 @@ _Client:_
 
 ## Features 📌
 
-- 
+- Search Comics
 - Responsive Design
+- Login and SignUp
+- Filter comics by Category
+- Add comics to car
+
+## Product-List Endpoint
+![Product-List](https://user-images.githubusercontent.com/83327665/147889074-2d524b53-0b22-4dfe-b6e2-eb18dada8616.png)
+
 
 ## Build Setup 📦
 
